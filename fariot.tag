@@ -1,4 +1,4 @@
-<fa>
+<ta>
 
 <style>
 .fa {
@@ -21,7 +21,7 @@ f icon.flip-h{
   transform: scale(-1, 1);
 }
 
-fa icon.flip-v {
+f icon.flip-v {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -moz-transform: scale(1, -1);
   -webkit-transform: scale(1, -1);
@@ -850,4 +850,4 @@ var fa_icons = {
   }
   this.root.innerHTML = '<f class="'+ fontClass +'"><icon class="'+ flip+'" style="font-size:'+ size+'em; '+ width + valign + rotate +' ">'+text+'</icon></f>';
 </script>
-</fa>
+</ta>
