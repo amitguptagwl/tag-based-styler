@@ -803,7 +803,8 @@ fa_icons = {
    width = "",
    text = "",
    aDuration ="",
-   aDirection = "";
+   aDirection = "",
+   aSpeed="";
   var size = opts.size || 1;
   if(opts.valign) valign="vertical-align:" + opts.valign + ";";
   if(opts.rotate){
@@ -820,7 +821,10 @@ fa_icons = {
     aDirection = "-webkit-animation-direction: "+opts.direction+";"
       + "animation-direction: "+opts.direction+";"
   }
-
+  if(opts.speed){
+    aSpeed = "-webkit-animation-timing-function: "+opts.speed+";"
+      + "animation-timing-function: "+opts.speed+";"
+  }
   if(opts.nooverlap){
     width = 'width:'+ size+'em;';
   }
@@ -843,6 +847,6 @@ fa_icons = {
     classStr = ' class="' + classStr + '" '
   }
 
-  this.root.innerHTML = '<icon '+ classStr +'style="font-size:'+ size+'em; '+ rotate + width + valign + aDirection + aDuration + '">'+text+'</icon>';
+  this.root.innerHTML = '<icon '+ classStr +'style="font-size:'+ size+'em; '+ rotate + width + valign + aDirection + aDuration + aSpeed + '">'+text+'</icon>';
 </script>
 </ta>
