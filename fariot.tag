@@ -1,39 +1,19 @@
 <ta>
 
 <style>
-.fa {
-  font: normal normal normal 14px/1 FontAwesome;
+ta icon{
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-f icon{
   display: inline-block;
 }
-
-f icon.flip-h{
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-}
-
-f icon.flip-v {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -moz-transform: scale(1, -1);
-  -webkit-transform: scale(1, -1);
-  -o-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
-  transform: scale(1, -1);
-}
+.ta_fa{ font: normal normal normal 14px/1 FontAwesome; }
 
 </style>
 <script>
 
-var fa_icons = {
+fa_icons = {
   "glass": "f000",
   "music": "f001",
   "search": "f002",
@@ -818,8 +798,7 @@ var fa_icons = {
   "meetup":"f2e0"
 };
 
-  /*this.fa_char= fa_icons[opts.icon];*/
-  var valign = "", rotate = "", width = "", fontClass = "", text = "";
+  var valign = "", rotate = "", width = "", text = "";
   var size = opts.size || 1;
   if(opts.valign) valign="vertical-align:" + opts.valign + ";";
   if(opts.rotate){
@@ -828,26 +807,28 @@ var fa_icons = {
       +"transform: rotate("+opts.rotate+"deg);"
   }
   
-  var flip = "";
-  if(opts.flip){
-    switch(opts.flip){
-      case "v": flip="flip-v"; break;
-      case "h": flip="flip-h"; break;
-      case "vh":
-      case "hv": flip="flip-h flip-v";
-    }
-  }
-
   if(opts.nooverlap){
     width = 'width:'+ size+'em;';
   }
 
   if(opts.fa){
-    fontClass = "fa";
     text = '&#x' + fa_icons[opts.fa] + ';';
   }else{
     text = opts.text;
   }
-  this.root.innerHTML = '<f class="'+ fontClass +'"><icon class="'+ flip+'" style="font-size:'+ size+'em; '+ width + valign + rotate +' ">'+text+'</icon></f>';
+
+  var classStr = "";
+  if(opts.ta_class){
+    classStr+= opts.ta_class;
+  }
+  if(opts.fa){
+    classStr+= " ta_fa";
+  }
+
+  if(classStr){
+    classStr = ' class="' + classStr + '" '
+  }
+
+  this.root.innerHTML = '<icon '+ classStr +'style="font-size:'+ size+'em; '+ rotate + width + valign +'">'+text+'</icon>';
 </script>
 </ta>

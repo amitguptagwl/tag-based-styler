@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Font Awesome + Riot JS</title>
+	<link rel="stylesheet" href="font-awesome-animation.min.css">
 	<style type="text/css">
 		@font-face {
 		    font-family: 'FontAwesome';
@@ -40,11 +41,28 @@
 		  border-radius: .1em;
 		}
 
+		.flip-h{
+		  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+		  -moz-transform: scale(-1, 1);
+		  -webkit-transform: scale(-1, 1);
+		  -o-transform: scale(-1, 1);
+		  -ms-transform: scale(-1, 1);
+		  transform: scale(-1, 1);
+		}
+
+		.flip-v {
+		  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+		  -moz-transform: scale(1, -1);
+		  -webkit-transform: scale(1, -1);
+		  -o-transform: scale(1, -1);
+		  -ms-transform: scale(1, -1);
+		  transform: scale(1, -1);
+		}
+
 	</style>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.0.5/riot.min.js"></script> -->
 </head>
 <body>
-<p class="large">Large text + inline Icon <ta fa="long-arrow-down" rotate="45"></ta></p>
+<p class="large">Large text + inline Icon <ta rotate="45" fa="long-arrow-down"></ta></p>
 <p>
 <ta fa="long-arrow-down"></ta>a
 <ta fa="long-arrow-down" rotate="45"></ta>a
@@ -84,23 +102,33 @@
 <ta fa="window-minimize" valign="top"></ta>
 </p>
 
+<ta fa="play" ta_class="faa-horizontal animated" style="margin-right: 5px"></ta>Amit
+<br/>
+<ta text="amit" ta_class="faa-horizontal animated"></ta>
 
-<p>
-	<ta fa="spinner"></ta>
+<p class="large">
+	<ta fa="spinner" ta_class="faa-spin faa-slow animated" spin="2"></ta>
+	<ta fa="spinner" ta_class="faa-spin animated" pulse="1"></ta>
+	<ta fa="spinner" ta_class="faa-pulse-spin animated" pulse="2"></ta>
 </p>
 
+<p class="large">
+	<ta text="amit" spin="2"></ta>
+	<ta text="amit" pulse="1"></ta>
+	<ta text="amit" pulse="2"></ta>
+</p>
 
 <ul class="i-ul">
-  <li><ta class="i-li" fa="check-square"></ta>List icons</li>
-  <li><ta class="i-li" fa="check-square"></ta>can be used</li>
-  <li><ta class="i-li" fa="spinner"></ta>as bullets</li>
-  <li><ta class="i-li" fa="square"></ta>in lists</li>
+  <li><ta fa="check-square"></ta>List icons</li>
+  <li><ta fa="check-square"></ta>can be used</li>
+  <li><ta fa="spinner"></ta>as bullets</li>
+  <li><ta fa="square"></ta>in lists</li>
 </ul>
 
 <ta class="i-border" fa="quote-left"></ta> Border
 
 <p><ta text="amit" rotate="45"></ta></p>
-<p><ta text="B" flip="h"></ta><ta text="B" ></ta></p>
+<p><ta ta_class="flip-h" text="B"></ta><ta text="B" ></ta></p>
 
 <script src="https://cdn.jsdelivr.net/riot/3.0/riot.min.js"></script>
 <script src="fariot.js"></script>
