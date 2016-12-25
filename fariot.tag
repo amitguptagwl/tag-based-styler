@@ -839,7 +839,7 @@ var fa_icons = {
 };
 
   /*this.fa_char= fa_icons[opts.icon];*/
-  var valign = "", rotate = "";
+  var valign = "", rotate = "", width = "";
   var size = opts.size || 1;
   if(opts.valign) valign="vertical-align:" + opts.valign + ";";
   if(opts.rotate){
@@ -858,6 +858,9 @@ var fa_icons = {
     }
   }
 
-  this.root.innerHTML = '<icon class="'+ flip+'" style="font-size:'+ size+'em; '+ valign+'; '+rotate+' ">&#x' + fa_icons[opts.icon] + ';</icon>';
+  if(opts.nooverlap){
+    width = 'width:'+ size+'em;';
+  }
+  this.root.innerHTML = '<icon class="'+ flip+'" style="font-size:'+ size+'em; '+ width + valign + rotate +' ">&#x' + fa_icons[opts.icon] + ';</icon>';
 </script>
 </fa>
