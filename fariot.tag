@@ -850,3 +850,23 @@ fa_icons = {
   this.root.innerHTML = '<icon '+ classStr +'style="font-size:'+ size+'em; '+ rotate + width + valign + aDirection + aDuration + aSpeed + '">'+text+'</icon>';
 </script>
 </ta>
+
+<ta_stack>
+<yield/>
+
+  <style>
+    ta_stack{
+      width: 1em;
+      height: 1em;
+      line-height: 1em;
+      position: relative;
+      display: inline-block;
+    }
+    ta_stack > ta{
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      line-height: inherit;
+    }
+  </style>
+</ta_stack>
