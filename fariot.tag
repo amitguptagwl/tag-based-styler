@@ -2,16 +2,17 @@
 
 <style>
 fa {
-   display: inline-block
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-fa i{
-  display: block; 
-  font-family: 'FontAwesome';
-  font-style: normal;
-  font-weight: normal;
+fa icon{
+  display: inline-block;
 }
 
-fa i.flip-h{
+fa icon.flip-h{
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -moz-transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
@@ -20,7 +21,7 @@ fa i.flip-h{
   transform: scale(-1, 1);
 }
 
-fa i.flip-v {
+fa icon.flip-v {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -moz-transform: scale(1, -1);
   -webkit-transform: scale(1, -1);
@@ -838,9 +839,9 @@ var fa_icons = {
 };
 
   /*this.fa_char= fa_icons[opts.icon];*/
+  var valign = "", rotate = "";
   var size = opts.size || 1;
-  var valign = opts.valign || "super";
-  var rotate = "";
+  if(opts.valign) valign="vertical-align:" + opts.valign + ";";
   if(opts.rotate){
     rotate = "-ms-transform: rotate("+opts.rotate+"deg); "
       +"-webkit-transform: rotate("+opts.rotate+"deg); "
@@ -857,6 +858,6 @@ var fa_icons = {
     }
   }
 
-  this.root.innerHTML = '<i class="'+ flip+'" style="font-size:'+ size+'em; vertical-align: '+ valign+'; '+rotate+' ">&#x' + fa_icons[opts.icon] + ';</i>';
+  this.root.innerHTML = '<icon class="'+ flip+'" style="font-size:'+ size+'em; '+ valign+'; '+rotate+' ">&#x' + fa_icons[opts.icon] + ';</icon>';
 </script>
 </fa>
