@@ -1,22 +1,30 @@
-<fa class="{flip}" style="font-size:{size}em; vertical-align: {valign}; {rotate} ">
+<fa>
 
 <style>
-fa{
+fa {
+   display: inline-block
+}
+fa i{
+  display: block; 
   font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
 }
 
-fa.flip-h{
+fa i.flip-h{
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -moz-transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
-fa.flip-v {
+fa i.flip-v {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -moz-transform: scale(1, -1);
   -webkit-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
 }
@@ -849,6 +857,6 @@ var fa_icons = {
     }
   }
 
-  this.root.innerHTML = '&#x' + fa_icons[opts.icon] + ';';
+  this.root.innerHTML = '<i class="'+ flip+'" style="font-size:'+ size+'em; vertical-align: '+ valign+'; '+rotate+' ">&#x' + fa_icons[opts.icon] + ';</i>';
 </script>
 </fa>
