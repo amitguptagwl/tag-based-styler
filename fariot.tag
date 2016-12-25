@@ -1,18 +1,18 @@
 <fa>
 
 <style>
-fa {
+.fa {
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-fa icon{
+f icon{
   display: inline-block;
 }
 
-fa icon.flip-h{
+f icon.flip-h{
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -moz-transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
@@ -29,27 +29,7 @@ fa icon.flip-v {
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
 }
-/*fa.fa-stack {
-  position: relative;
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  line-height: 2em;
-  vertical-align: middle;
-}
-.fa-stack-1x,
-.fa-stack-2x {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  text-align: center;
-}
-.fa-stack-1x {
-  line-height: inherit;
-}
-.fa-stack-2x {
-  font-size: 2em;
-}*/
+
 </style>
 <script>
 
@@ -839,7 +819,7 @@ var fa_icons = {
 };
 
   /*this.fa_char= fa_icons[opts.icon];*/
-  var valign = "", rotate = "", width = "";
+  var valign = "", rotate = "", width = "", fontClass = "", text = "";
   var size = opts.size || 1;
   if(opts.valign) valign="vertical-align:" + opts.valign + ";";
   if(opts.rotate){
@@ -861,6 +841,13 @@ var fa_icons = {
   if(opts.nooverlap){
     width = 'width:'+ size+'em;';
   }
-  this.root.innerHTML = '<icon class="'+ flip+'" style="font-size:'+ size+'em; '+ width + valign + rotate +' ">&#x' + fa_icons[opts.icon] + ';</icon>';
+
+  if(opts.fa){
+    fontClass = "fa";
+    text = '&#x' + fa_icons[opts.fa] + ';';
+  }else{
+    text = opts.text;
+  }
+  this.root.innerHTML = '<f class="'+ fontClass +'"><icon class="'+ flip+'" style="font-size:'+ size+'em; '+ width + valign + rotate +' ">'+text+'</icon></f>';
 </script>
 </fa>

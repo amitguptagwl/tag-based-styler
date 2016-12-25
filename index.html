@@ -17,49 +17,91 @@
 		.large{
 			font-size: 2em;
 		}
+
+		.i-ul {
+		  padding-left: 0;
+		  margin-left: 2.14285714em;
+		  list-style-type: none;
+		}
+		.i-ul > li {
+		  position: relative;
+		}
+		.i-li {
+		  position: absolute;
+		  left: -2.14285714em;
+		  width: 2.14285714em;
+		  top: 0.14285714em;
+		  text-align: center;
+		}
+
+		.i-border {
+		  padding: .2em .25em .15em;
+		  border: solid 0.08em #eeeeee;
+		  border-radius: .1em;
+		}
+
 	</style>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.0.5/riot.min.js"></script> -->
 </head>
 <body>
-<p class="large">Large text + inline Icon <fa icon="long-arrow-down" rotate="45"></fa></p>
+<p class="large">Large text + inline Icon <fa fa="long-arrow-down" rotate="45"></fa></p>
 <p>
-<fa icon="long-arrow-down"></fa>a
-<fa icon="long-arrow-down" rotate="45"></fa>a
-<fa icon="long-arrow-down" rotate="90"></fa>a
-<fa icon="long-arrow-down" rotate="135"></fa>a 
-<fa icon="long-arrow-down" rotate="180"></fa>a
-<fa icon="long-arrow-down" rotate="225"></fa>a
-<fa icon="long-arrow-down" rotate="360"></fa>a
+<fa fa="long-arrow-down"></fa>a
+<fa fa="long-arrow-down" rotate="45"></fa>a
+<fa fa="long-arrow-down" rotate="90"></fa>a
+<fa fa="long-arrow-down" rotate="135"></fa>a 
+<fa fa="long-arrow-down" rotate="180"></fa>a
+<fa fa="long-arrow-down" rotate="225"></fa>a
+<fa fa="long-arrow-down" rotate="360"></fa>a
 </p>
 
 <p>
-<fa icon="long-arrow-down"></fa>a
-<fa icon="long-arrow-down" rotate="45" nooverlap="true"></fa>a
-<fa icon="long-arrow-down" rotate="90" nooverlap="true"></fa>a
-<fa icon="long-arrow-down" rotate="135" nooverlap="true"></fa>a 
-<fa icon="long-arrow-down" rotate="180" nooverlap="true"></fa>a
-<fa icon="long-arrow-down" rotate="225" nooverlap="true"></fa>a
-<fa icon="long-arrow-down" rotate="360" nooverlap="true"></fa>a
+<fa fa="long-arrow-down"></fa>a
+<fa fa="long-arrow-down" rotate="45" nooverlap="true"></fa>a
+<fa fa="long-arrow-down" rotate="90" nooverlap="true"></fa>a
+<fa fa="long-arrow-down" rotate="135" nooverlap="true"></fa>a 
+<fa fa="long-arrow-down" rotate="180" nooverlap="true"></fa>a
+<fa fa="long-arrow-down" rotate="225" nooverlap="true"></fa>a
+<fa fa="long-arrow-down" rotate="360" nooverlap="true"></fa>a
 </p>
 
-<p>Regular text Big icon <fa icon="search" size=2 flip="hv"></fa></p>
-<p>v-aligned <fa icon="search" size=2 flip="hv" valign="middle"></fa></p>
+<p>Regular text Big icon <fa fa="search" size=2 flip="hv"></fa></p>
+<p>v-aligned <fa fa="search" size=2 flip="hv" valign="middle"></fa></p>
 
-<p class="large">
-<fa icon="window-minimize" valign="super"></fa>
-<fa icon="window-minimize" valign="middle"></fa>
-<fa icon="window-minimize" valign="bottom"></fa>
-<fa icon="window-minimize" valign="middle"></fa>
-<fa icon="window-minimize" valign="top"></fa>
-<fa icon="window-minimize" valign="middle"></fa>
-<fa icon="window-minimize" valign="bottom"></fa>
-<fa icon="window-minimize" valign="middle"></fa>
-<fa icon="window-minimize" valign="top"></fa>
-<fa icon="window-minimize" valign="middle"></fa>
-<fa icon="window-minimize" valign="bottom"></fa>
-<fa icon="window-minimize" valign="middle"></fa>
-<fa icon="window-minimize" valign="top"></fa>
+<p>
+<fa fa="window-minimize" valign="super"></fa>
+<fa fa="window-minimize" valign="middle"></fa>
+<fa fa="window-minimize" valign="bottom"></fa>
+<fa fa="window-minimize" valign="middle"></fa>
+<fa fa="window-minimize" valign="top"></fa>
+<fa fa="window-minimize" valign="middle"></fa>
+<fa fa="window-minimize" valign="bottom"></fa>
+<fa fa="window-minimize" valign="middle"></fa>
+<fa fa="window-minimize" valign="top"></fa>
+<fa fa="window-minimize" valign="middle"></fa>
+<fa fa="window-minimize" valign="bottom"></fa>
+<fa fa="window-minimize" valign="middle"></fa>
+<fa fa="window-minimize" valign="top"></fa>
 </p>
+
+
+<p>
+	<fa fa="spinner"></fa>
+</p>
+
+
+<ul class="i-ul">
+  <li><fa class="i-li" fa="check-square"></fa>List icons</li>
+  <li><fa class="i-li" fa="check-square"></fa>can be used</li>
+  <li><fa class="i-li" fa="spinner"></fa>as bullets</li>
+  <li><fa class="i-li" fa="square"></fa>in lists</li>
+</ul>
+
+<fa class="i-border" fa="quote-left"></fa> Border
+
+<p><fa text="amit" rotate="45"></fa></p>
+<p><fa text="B" flip="h"></fa><fa text="B" ></fa></p>
+
 <script src="https://cdn.jsdelivr.net/riot/3.0/riot.min.js"></script>
 <script src="fariot.js"></script>
 
