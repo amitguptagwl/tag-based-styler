@@ -798,7 +798,12 @@ fa_icons = {
   "meetup":"f2e0"
 };
 
-  var valign = "", rotate = "", width = "", text = "";
+  var valign = "",
+   rotate = "",
+   width = "",
+   text = "",
+   aDuration ="",
+   aDirection = "";
   var size = opts.size || 1;
   if(opts.valign) valign="vertical-align:" + opts.valign + ";";
   if(opts.rotate){
@@ -807,6 +812,15 @@ fa_icons = {
       +"transform: rotate("+opts.rotate+"deg);"
   }
   
+  if(opts.duration){
+    aDuration = "-webkit-animation-duration: "+opts.duration+"s;"
+      + "animation-duration: "+opts.duration+"s;"
+  }
+  if(opts.direction){
+    aDirection = "-webkit-animation-direction: "+opts.direction+";"
+      + "animation-direction: "+opts.direction+";"
+  }
+
   if(opts.nooverlap){
     width = 'width:'+ size+'em;';
   }
@@ -829,6 +843,6 @@ fa_icons = {
     classStr = ' class="' + classStr + '" '
   }
 
-  this.root.innerHTML = '<icon '+ classStr +'style="font-size:'+ size+'em; '+ rotate + width + valign +'">'+text+'</icon>';
+  this.root.innerHTML = '<icon '+ classStr +'style="font-size:'+ size+'em; '+ rotate + width + valign + aDirection + aDuration + '">'+text+'</icon>';
 </script>
 </ta>
