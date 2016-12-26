@@ -2,181 +2,175 @@
 <html>
 <head>
 	<title>Font Awesome + Riot JS</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="font-awesome-animation.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<style type="text/css">
-		@font-face {
-		    font-family: 'FontAwesome';
-		    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/FontAwesome.otf') format('woff'), 
-		       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot') format('embedded-opentype'), 
-		       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.svg') format('svg'), 
-		       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf') format('truetype'), 
-		       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff') format('woff'), 
-		       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2') format('woff');
-		    font-style: normal;
-		    font-weight: normal;
-		}
 		.large{
 			font-size: 2em;
 		}
-
-		.i-ul {
-		  padding-left: 0;
-		  margin-left: 2.14285714em;
-		  list-style-type: none;
-		}
-		.i-ul > li {
-		  position: relative;
-		}
-		.i-li {
-		  position: absolute;
-		  left: -2.14285714em;
-		  width: 2.14285714em;
-		  top: 0.14285714em;
-		  text-align: center;
-		}
-
-		.i-border {
-		  padding: .2em .25em .15em;
-		  border: solid 0.08em #eeeeee;
-		  border-radius: .1em;
-		}
-
-		.flip-h{
-		  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-		  -moz-transform: scale(-1, 1);
-		  -webkit-transform: scale(-1, 1);
-		  -o-transform: scale(-1, 1);
-		  -ms-transform: scale(-1, 1);
-		  transform: scale(-1, 1);
-		}
-
-		.flip-v {
-		  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-		  -moz-transform: scale(1, -1);
-		  -webkit-transform: scale(1, -1);
-		  -o-transform: scale(1, -1);
-		  -ms-transform: scale(1, -1);
-		  transform: scale(1, -1);
-		}
-
-		ta_group.middle  ta icon{
-			vertical-align: middle;
-		}
-		ta_group.baseline  ta icon{
-			vertical-align: baseline;
-		}
-		ta_group.top  ta icon{
-			vertical-align: top;
+		.red{
+			color: red;
 		}
 	</style>
 </head>
 <body>
-<p class="large">Large text + inline Icon <ta rotate="45" fa="long-arrow-down"></ta></p>
+
+<i class="fa fa-bell faa-ring animated"></i> fa-ring
+<i class="fa fa-camera-retro"></i> fa-camera-retro
+<i class="fa fa-long-arrow-down"  ds_transform="rotate(45deg)"></i> fa-camera-retro
+
+<p><span  ds_transform="rotate(45deg)"> amit</span></p>
+<p class="large">Large text + inline Icon <i  ds_transform="rotate(45deg)" class="fa fa-long-arrow-down fa-spin" ds_toggleClick="red"></i></p>
 <p>
-<ta fa="long-arrow-down"></ta>a
-<ta fa="long-arrow-down" rotate="45"></ta>a
-<ta fa="long-arrow-down" rotate="90"></ta>a
-<ta fa="long-arrow-down" rotate="135"></ta>a 
-<ta fa="long-arrow-down" rotate="180"></ta>a
-<ta fa="long-arrow-down" rotate="225"></ta>a
-<ta fa="long-arrow-down" rotate="360"></ta>a
+
+<p class="fa fa-spin">O---------------------------O</p>
+
+<p class="fa fa-spin">
+	This is the paragraph.
+	<input type="text" name="" placeholder="Sample textbox" />
 </p>
 
-<p>
-<ta fa="long-arrow-down"></ta>a
-<ta fa="long-arrow-down" rotate="45" nooverlap="true"></ta>a
-<ta fa="long-arrow-down" rotate="90" nooverlap="true"></ta>a
-<ta fa="long-arrow-down" rotate="135" nooverlap="true"></ta>a 
-<ta fa="long-arrow-down" rotate="180" nooverlap="true"></ta>a
-<ta fa="long-arrow-down" rotate="225" nooverlap="true"></ta>a
-<ta fa="long-arrow-down" rotate="360" nooverlap="true"></ta>a
-</p>
-
-<p>Regular text Big icon <ta fa="search" size=2 flip="hv"></ta></p>
-<p>v-aligned <ta fa="search" size=2 flip="hv" valign="middle"></ta></p>
 
 <p>
-<ta fa="window-minimize" valign="super"></ta>
-<ta fa="window-minimize" valign="middle"></ta>
-<ta fa="window-minimize" valign="bottom"></ta>
-<ta fa="window-minimize" valign="middle"></ta>
-<ta fa="window-minimize" valign="top"></ta>
-<ta fa="window-minimize" valign="middle"></ta>
-<ta fa="window-minimize" valign="bottom"></ta>
-<ta fa="window-minimize" valign="middle"></ta>
-<ta fa="window-minimize" valign="top"></ta>
-<ta fa="window-minimize" valign="middle"></ta>
-<ta fa="window-minimize" valign="bottom"></ta>
-<ta fa="window-minimize" valign="middle"></ta>
-<ta fa="window-minimize" valign="top"></ta>
+<i class="fa fa-long-arrow-down"></i>a
+<i class="fa fa-long-arrow-down"  ds_transform="rotate(45deg)" nooverlap="true"></i>a
+<i class="fa fa-long-arrow-down"  ds_transform="rotate(90deg)" nooverlap="true"></i>a
+<i class="fa fa-long-arrow-down"  ds_transform="rotate(135deg)" nooverlap="true"></i>a 
+<i class="fa fa-long-arrow-down"  ds_transform="rotate(180deg)" nooverlap="true"></i>a
+<i class="fa fa-long-arrow-down"  ds_transform="rotate(225deg)" nooverlap="true"></i>a
+<i class="fa fa-long-arrow-down"  ds_transform="rotate(360deg)" nooverlap="true"></i>a
 </p>
 
-<ta fa="play" ta_class="faa-horizontal animated" style="margin-right: 5px"></ta>Amit
+<p>Regular text Big icon <i  class="fa fa-search" size=2 flip="hv"></i></p>
+<p>v-aligned <i  class="fa fa-search" size=2 flip="hv" valign="middle"></i></p>
+
+<p>
+<i  class="fa fa-window-minimize" valign="super"></i>
+<i  class="fa fa-window-minimize" valign="middle"></i>
+<i  class="fa fa-window-minimize" valign="bottom"></i>
+<i  class="fa fa-window-minimize" valign="middle"></i>
+<i  class="fa fa-window-minimize" valign="top"></i>
+<i  class="fa fa-window-minimize" valign="middle"></i>
+<i  class="fa fa-window-minimize" valign="bottom"></i>
+<i  class="fa fa-window-minimize" valign="middle"></i>
+<i  class="fa fa-window-minimize" valign="top"></i>
+<i  class="fa fa-window-minimize" valign="middle"></i>
+<i  class="fa fa-window-minimize" valign="bottom"></i>
+<i  class="fa fa-window-minimize" valign="middle"></i>
+<i  class="fa fa-window-minimize" valign="top"></i>
+</p>
+
+<i  class="fa fa-play faa-horizontal animated" style="margin-right: 5px"></i>Amit
 <br/>
-<ta text="amit" ta_class="faa-horizontal animated"></ta>
+<i class="fa faa-horizontal animated">amit</i>
 
 <p class="large">
-	<ta fa="spinner" ta_class="faa-spin animated" duration="5"></ta>
-	<ta fa="spinner" ta_class="faa-spin animated" direction="reverse"></ta>
-	<ta fa="spinner" ta_class="faa-spin animated" speed="steps(8)"></ta>
+	<i  class="fa fa-spinner faa-spin animated" ds_duration="5s"></i>
+	<i  class="fa fa-spinner faa-spin animated" ds_direction="reverse"></i>
+	<i  class="fa fa-spinner faa-spin animated" ds_speed="steps(8)"></i>
 </p>
 
 <p class="large">
-	<ta text="amit" ta_class="faa-spin faa-slow animated"></ta>
-	<ta text="amit" ta_class="faa-spin animated" direction="reverse"></ta>
+	<span  class="fa faa-spin faa-slow animated" >amit</span>
+	<span  class="faa-spin animated" ds_direction="reverse">amit</span>
 </p>
 
-<p><ta fa="bell" ta_class="faa-ring animated" duration="3"></ta><ta fa="bathtub" ta_class="bounce animated infinite"></p>
+<p><i  class="fa fa-bell faa-ring animated" ds_duration="3s"></i><i  class="fa fa-bathtub bounce animated infinite" ds_hover="faa-spin"></i>
+</p>
 
-<p></ta></p>
+<p></i></p>
 
-<ul class="i-ul">
-  <li><ta fa="check-square"></ta>List icons</li>
-  <li><ta fa="check-square"></ta>can be used</li>
-  <li><ta fa="spinner"></ta>as bullets</li>
-  <li><ta fa="square"></ta>in lists</li>
+<ul class="fa-ul">
+  <li><i  class="fa fa-li fa-check-square"></i>List icons</li>
+  <li><i  class="fa fa-li fa-check-square"></i>can be used</li>
+  <li><i  class="fa fa-li fa-spinner"></i>as bullets</li>
+  <li><i  class="fa fa-li fa-square"></i>in lists</li>
 </ul>
 
-<ta class="i-border" fa="quote-left"></ta> Border
+<i class="fa fa-border fa-quote-left"></i> Border
 
-<p><ta text="amit" rotate="45"></ta></p>
-<p><ta ta_class="flip-h" text="B"></ta><ta text="B" ></ta></p>
+<p><i text="amit" ds_transform="rotate(45deg)"></i></p>
+<p><i ta_class="flip-h" text="B"></i><i text="B" ></i></p>
 
 <p class="large">Cameras
-<ta_stack  style="vertical-align: middle;">
-	<ta fa="camera" size=0.5></ta>
-	<ta fa="ban" size=1 style="color: red"></ta>
-</ta_stack>
+<span  style="vertical-align: middle;">
+	<i  class="fa fa-camera" size=0.5></i>
+	<i  class="fa fa-ban" size=1 style="color: red"></i>
+</span>
 are banned.
 </p>
 
 <p>Cameras
-<ta_stack>
-	<ta fa="camera"></ta>
-	<ta fa="ban" size=2 style="color: red"></ta>
-</ta_stack>
+<span>
+	<i  class="fa fa-camera"></i>
+	<i  class="fa fa-ban" size=2 style="color: red"></i>
+</span>
+are banned.
+</p>
+<p><span class="fa fa-flip-vertical">FLIP</span> <span class="fa fa-flip-horizontal">FLIP</span></p>
+<p style="font-size: 5vw">Cameras
+<span class="fa rubberBand animated infinite">
+	<i  class="fa fa-camera"></i>
+	<i  class="fa fa-ban" size=2 style="color: red"></i>
+</span>
 are banned.
 </p>
 
-<p style="font-size: 5vw">Cameras
-<ta_stack class="rubberBand animated infinite">
-	<ta fa="camera"></ta>
-	<ta fa="ban" size=2 style="color: red"></ta>
-</ta_stack>
-are banned.
-</p>
+
 
 Ref:
 https://github.com/daneden/animate.css
 
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/riot/3.0/riot.min.js"></script>
-<script src="fariot.js"></script>
+<script type="text/javascript">
 
-<script>
-	riot.mount('*');
+	$.fn.ds_update = function(){
+		setPoperties($(this),"ds_speed","animation-timing-function");
+		setPoperties($(this),"ds_direction","animation-direction");
+		setPoperties($(this),"ds_transform","transform");
+		setPoperties($(this),"ds_duration","animation-duration");
+
+		var arr = $(this).find("[ds_hover]")
+		for(i =0; i< arr.length; i++){
+			var e= $(arr[i]);
+			var v= e.attr("ds_hover");
+			e.hover(function() {
+		      $( this ).addClass(v);
+		    }, function() {
+		      $( this ).removeClass(v);
+		    })
+		}
+
+		var arr = $(this).find("[ds_toggleClick]")
+		for(i =0; i< arr.length; i++){
+			var e= $(arr[i]);
+			var v= e.attr("ds_toggleClick");
+			e.click(function() {
+			  $( this ).toggleClass(v);
+			});
+		}
+
+		function setPoperties(el,a,p){
+			var arr = el.find("["+a+"]");
+			for(i =0; i< arr.length; i++){
+				var e= $(arr[i]);
+				var v= e.attr(a);
+				e.css("display","inline-block")
+				.css("-ms-"+p, v)
+				.css("-webkit-"+p,v)
+	    		.css(p,v);
+			}
+		}
+	}
+	
+
+
+	$(document).ready(() => {
+		$("body").ds_update();
+	});
 </script>
 </body>
 </html>
