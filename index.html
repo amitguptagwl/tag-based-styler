@@ -3,6 +3,7 @@
 <head>
 	<title>Font Awesome + Riot JS</title>
 	<link rel="stylesheet" href="font-awesome-animation.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<style type="text/css">
 		@font-face {
 		    font-family: 'FontAwesome';
@@ -59,6 +60,15 @@
 		  transform: scale(1, -1);
 		}
 
+		ta_group.middle  ta icon{
+			vertical-align: middle;
+		}
+		ta_group.baseline  ta icon{
+			vertical-align: baseline;
+		}
+		ta_group.top  ta icon{
+			vertical-align: top;
+		}
 	</style>
 </head>
 <body>
@@ -117,7 +127,9 @@
 	<ta text="amit" ta_class="faa-spin animated" direction="reverse"></ta>
 </p>
 
-<p><ta fa="bell" ta_class="faa-ring animated" duration="5"></ta></p>
+<p><ta fa="bell" ta_class="faa-ring animated" duration="3"></ta><ta fa="bathtub" ta_class="bounce animated infinite"></p>
+
+<p></ta></p>
 
 <ul class="i-ul">
   <li><ta fa="check-square"></ta>List icons</li>
@@ -131,13 +143,35 @@
 <p><ta text="amit" rotate="45"></ta></p>
 <p><ta ta_class="flip-h" text="B"></ta><ta text="B" ></ta></p>
 
-<p>Cameras
-<ta_stack>
-	<ta fa="camera"></ta>
-	<ta fa="ban" style="color: red"></ta>
+<p class="large">Cameras
+<ta_stack  style="vertical-align: middle;">
+	<ta fa="camera" size=0.5></ta>
+	<ta fa="ban" size=1 style="color: red"></ta>
 </ta_stack>
 are banned.
 </p>
+
+<p>Cameras
+<ta_stack>
+	<ta fa="camera"></ta>
+	<ta fa="ban" size=2 style="color: red"></ta>
+</ta_stack>
+are banned.
+</p>
+
+<p style="font-size: 5vw">Cameras
+<ta_stack class="rubberBand animated infinite">
+	<ta fa="camera"></ta>
+	<ta fa="ban" size=2 style="color: red"></ta>
+</ta_stack>
+are banned.
+</p>
+
+Ref:
+https://github.com/daneden/animate.css
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/riot/3.0/riot.min.js"></script>
 <script src="fariot.js"></script>
 

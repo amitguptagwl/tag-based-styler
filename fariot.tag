@@ -848,6 +848,18 @@ fa_icons = {
   }
 
   this.root.innerHTML = '<icon '+ classStr +'style="font-size:'+ size+'em; '+ rotate + width + valign + aDirection + aDuration + aSpeed + '">'+text+'</icon>';
+
+/*this.on('mount',function(){
+  
+  if(opts.onhover){
+    $(this.root).hover(function(){
+      $(this).addClass("bounce animated");
+    });
+    $(this.root).bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",function(){
+        $(this).removeClass("bounce animated");
+    });
+  }
+})*/
 </script>
 </ta>
 
@@ -861,6 +873,7 @@ fa_icons = {
       line-height: 1em;
       position: relative;
       display: inline-block;
+
     }
     ta_stack > ta{
       position: absolute;
@@ -868,5 +881,27 @@ fa_icons = {
       text-align: center;
       line-height: inherit;
     }
+
   </style>
+  <script>
+  this.on('mount',function(){
+    if($){
+      var maxSize = 1, minSize = 0;
+      $(this.root).children("ta[size]").each(function(){
+        var s = $(this).attr("size");
+        if(s >= 1){
+          maxSize = s;
+        } else{
+          minSize = s;
+        }
+      });
+      if(minSize > 0){
+        $(this.root).css("line-height",minSize + "em");
+      }else{
+        $(this.root).css("line-height",maxSize + "em");
+      }
+      $(this.root).css("width",maxSize + "em");
+    }
+  })
+  </script>
 </ta_stack>
