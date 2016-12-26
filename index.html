@@ -118,6 +118,52 @@ are banned.
 are banned.
 </p>
 
+<!-- <p>
+	Start<span class="ds_stack" style="display: inline-block;
+    position: relative;">
+		<i class="fa fa-long-arrow-right" style="position: absolute; opacity: 0.2;"></i>
+		<span class="ds_stack" style="display: inline-block;
+    position: relative;">
+		<i class="fa fa-long-arrow-right" style="position: absolute; opacity: 0.4;  margin-left: 0.3em"></i>
+		<span class="ds_stack" style="display: inline-block;
+    position: relative;">
+			<i class="fa fa-long-arrow-right" style="position: absolute; opacity: 0.6;  margin-left: 0.6em"></i>
+			<i class="fa fa-long-arrow-right red" style="opacity: 1;  margin-left: 0.9em"></i>
+		</span>
+		</span>
+	</span>End
+</p> -->
+
+<p>
+	Start
+	<span class="ds_stack" pull="30" opacity="0.3,1">
+		<i class="fa fa-long-arrow-right ds_i"></i>
+		<i class="fa fa-long-arrow-right ds_i"></i>
+		<i class="fa fa-long-arrow-right ds_i"></i>
+		<i class="fa fa-long-arrow-right red ds_i"></i>
+	</span>
+	End
+</p>
+
+<p>
+	Start
+	<span class="ds_stack" pull="70" opacity="0.3">
+		<i class="fa fa-long-arrow-right ds_i"></i>
+		<i class="fa fa-long-arrow-right ds_i"></i>
+		<i class="fa fa-long-arrow-right ds_i"></i>
+		<i class="fa fa-long-arrow-right red ds_i"></i>
+	</span>
+	End
+</p>
+
+<p>
+	Start
+	<i class="fa fa-long-arrow-right" ></i>
+	<i class="fa fa-long-arrow-right"></i>
+	<i class="fa fa-long-arrow-right"></i>
+	<i class="fa fa-long-arrow-right red"></i>
+	End
+</p>
 
 
 Ref:
@@ -166,10 +212,41 @@ https://github.com/daneden/animate.css
 		}
 	}
 	
+	$.fn.ds_stack = function(){
+		//get the list of elements with class ds_i
+		var el= $(this);
+		for(i =0; i< el.length; i++){
+			var p = $(el[i]);
+			var pullV = p.attr("pull");
+			//p.attr("letter-spacing");
+			var op = p.attr("opacity");
+			var cArr = p.children();
+			var m = -0.01*pullV;
+			for(k =1; k< cArr.length; k++){
+				$(cArr[k]).css("margin-left",m+"em");
+			}
+
+			if(op){
+				var avg = 0;
+				var startO= 0;
+				if(op.indexOf(",") > -1){
+					op=op.split(",");
+					startO=Number(op[0]);
+					avg = (startO+Number(op[0]))/cArr.length;
+				}else{
+					startO = Number(op);
+				}
+				for(j =0; j< cArr.length; j++){
+					$(cArr[j]).css("opacity",startO+avg*j);
+				}
+			}
+		}
+	}
 
 
 	$(document).ready(() => {
 		$("body").ds_update();
+		$(".ds_stack").ds_stack();
 	});
 </script>
 </body>
