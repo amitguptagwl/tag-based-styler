@@ -87,7 +87,7 @@
 <p><i class="ds" text="amit" ds_transform="rotate(45deg)"></i></p>
 <p><i class="fa fa-flip-horizontal">B</i>B</i></p>
 
-<p class="large">Cameras
+<p style="font-size: 5vw">Cameras
 <span  class="fa-stack fa-lg">
 	<i  class="fa fa-camera fa-stack-1x"></i>
 	<i  class="fa fa-ban fa-stack-2x red"></i>
@@ -96,15 +96,15 @@ are banned.
 </p>
 
 <p>Cameras
-<span>
-	<i  class="fa fa-camera"></i>
-	<i  class="fa fa-ban" size=2 style="color: red"></i>
+<span class="fa-stack fa-lg">
+	<i  class="fa fa-camera fa-stack-1x"></i>
+	<i  class="fa fa-ban fa-stack-2x"></i>
 </span>
 are banned.
 </p>
 <p><span class="fa fa-flip-vertical">FLIP</span> <span class="fa fa-flip-horizontal">FLIP</span></p>
 <p style="font-size: 5vw">Cameras&nbsp;
-	<span class="ds_stack fa rubberBand animated infinite mdl" pull="82" font-size="1,2">
+	<span class="ds_stack fa rubberBand animated infinite mdl" pull="43|1" font-size="1,2">
 		<i  class="fa fa-camera"></i>
 		<i  class="fa fa-ban red"></i>
 	</span>are banned.
@@ -112,7 +112,7 @@ are banned.
 
 <p>
 	Start
-	<span class="ds_stack" pull="30" opacity="0.3,1">
+	<span class="ds_stack" pull="30|1,2,3" opacity="0.3,1">
 		<i class="fa fa-long-arrow-right ds_i"></i>
 		<i class="fa fa-long-arrow-right ds_i"></i>
 		<i class="fa fa-long-arrow-right ds_i"></i>
@@ -211,18 +211,35 @@ https://github.com/daneden/animate.css
 			var p = $(el[i]);
 
 			var pullV = p.attr("pull");
-			if(pullV){			
-				var cArr = p.children();
-				var m = -0.01*pullV;
-				for(k =1; k< cArr.length; k++){
-					//var ow=$(cArr[k]).outerWidth();
-					$(cArr[k]).css("margin-left",m+"em");
-				}
+			if(pullV){	
+				ds_pull(p,pullV);
 			}
 
 			setIncrementalProperty(p,"opacity","");
 			setIncrementalProperty(p,"font-size","em");
-			
+		}
+
+		function ds_pull(el,v){
+			var cArr = el.children();
+			var percentage = 1;
+			var items;
+			if(v.indexOf("|") > -1){
+				var tmp = v.split("|");
+				percentage = -0.01*Number(tmp[0]);
+				items = tmp[1].split(",");
+				console.log(items);
+			}else{
+				percentage = -0.01*v;
+				items = new Array(cArr.length);
+				for(var k =0; k< items.length;){
+					items[k] = k++;
+				}
+			}
+			for(var k =0; k< items.length; k++){
+				var c_el= cArr[items[k]];
+				var w=($(c_el).width())/16;
+				$(c_el).css("margin-left",(w*percentage)+"em");
+			}
 		}
 
 		function setIncrementalProperty(parent,prop,sufix){
