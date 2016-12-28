@@ -1,0 +1,62 @@
+Features
+
+open icon
+	https://useiconic.com/open
+evil icon
+	http://evil-icons.io/
+	
+create effects
+	pendulam
+		http://stackoverflow.com/questions/34136588/css3-animation-pendulum-effect
+	clock
+
+Create Sample
+	With Bootstarp
+		login box
+		button
+		list
+		quote
+
+animation Ideas
+	Reel: car moving from left to right. wheels are spining, trees, mountains, people of different sizes, color are passing
+	Pendulam 
+	clock : speed, spin, stack
+	Gears: small,big, spin, speed
+
+pull,up,down feature on individual
+
+pull="20|2,3,4,5,6,7,8"
+pull="20|2..8"
+pull="20|^1"
+
+2 way binding. So if someone change dom value by code or in debug mode. It should ebe refleted
+Programming control
+
+pull="30%"
+pull="30px"
+
+effects: e1,e2,e3 are nothing but classes
+
+a_count="" a_duration="" a_delay="" a_pause="" a_transform=""
+a_animate="[{a1},{a2},,{an}]" a_count="" a_duration="" a_delay="" a_on="" a_pause=""
+a_hover="e1", a_hover="{}"
+a_toggleClick=""
+a_click=""
+a_effect="e1,e2,e3,e4" a_on="" 
+a_effect="{bounce to right},{spin on path}"
+a_effect="{bounce(max,min or fix) to right(max,min or fix)},{spin on path},{break(effect:glass) in last},{when done }"
+
+a_effect="{after 30s easyBounce(300px,20px) to right(min:20px) on click and spin once and ... and break(like glass) in last},{repeat 30 times or upto 10s whichever is low},{do nothing},{restore(original state)}"
+
+
+to|from				position
+before|on|after 	event|time|duration|action
+do 					action
+upto 				duratoin|count (once,times)
+and 				combined effects
+or 					
+whichever 			condition
+low|high 			operators
+
+
+a_effect=""
