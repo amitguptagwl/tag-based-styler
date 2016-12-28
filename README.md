@@ -1,6 +1,10 @@
 # Tag Bbased Styler
 Give dynamic styling to any HTML tag without code
 
+[Demo 1](https://amitguptagwl.github.io/tag-based-styler/index.html)
+[Demo 2](https://amitguptagwl.github.io/tag-based-styler/animations.html)
+
+
 Example
 
 ```html
@@ -42,3 +46,13 @@ Example
 		<i class="fa fa-long-arrow-up red"></i>
 </span>
 ```
+
+
+## Future Plans
+Although this project is not under my dream projects I'll add more features to this project if there is really demand of this. Otherwise you feel free to do the changes. There are some features in my mind
+
+* **2 way binding** : If someone change the value of tag attribute, it'll be instantly update instead of calling jquery function to re-render the element.
+* **more tag** : Currently you can not guide in tag itself what animation you want. So if you use jquery other animation libraries then animation control attributes are use less. So I'm planning to add more tags to say what animatin you want.
+* **more animation** : Currently I'm using animation.css and font-awesome-animation.css for css animation. I'm planning to add more core animation styles which together can help you to create multiple animations on the fly.
+* **Individual pull** : Currently an element of stack/group can be pulled or pushed.
+* **natural language instructions** : a_effect="{after 30s easyBounce(300px,20px) to right(min:20px) on click and spin once and ... and break(like glass) in last},{repeat 30 times or upto 10s whichever is low},{do nothing for 2mins then restore(original state)}" 
