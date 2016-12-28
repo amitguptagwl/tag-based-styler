@@ -56,5 +56,6 @@ Although this project is not under my dream projects but I'll add more features 
 * **more animation** : Currently I'm using animation.css and font-awesome-animation.css for css animation. I'm planning to add more core animation styles which together can help you to create multiple animations on the fly.
 * **Individual pull** : Currently an element of stack/group can be pulled or pushed.
 * **natural language instructions** : a_effect="{after 30s easyBounce(300px,20px) to right(min:20px) on click and spin once and ... and break(like glass) in last},{repeat 30 times or upto 10s whichever is low},{do nothing for 2mins then restore(original state)}" 
+* **Convert to compoonent** : Due the page load, CPU speed and other factors, provided tag attributes don't work perfectly. So I'm planning to create react(or riot or something else) based components so the enduser will not see any differene on any broweser. Because every milisecond is important :)
 
 Press a star button above if you like this project.
