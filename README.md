@@ -49,7 +49,7 @@ Example
 
 
 ## Future Plans
-Although this project is not under my dream projects but I'll add more features to this project if there is really demand of this. Otherwise you feel free to do the changes. There are some features in my mind
+Although this project is not under my dream projects but I'll add more features to this project if people like the concept.  There are some features in my mind
 
 * **2 way binding** : If someone change the value of tag attribute, it'll be instantly update instead of calling jquery function to re-render the element.
 * **more tag** : Currently you can not guide in tag itself what animation you want. So if you use jquery other animation libraries then animation control attributes are use less. So I'm planning to add more tags to say what animatin you want.
