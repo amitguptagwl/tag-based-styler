@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Font Animation</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+	<script>
+    head.load(
+    	"https://code.jquery.com/jquery-3.1.1.min.js"
+    	,"http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    	,"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    	,"font-awesome-animation.min.css"
+    	,"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    	,"ds.js");
+    </script>
+	<style type="text/css">
+	.frame{
+		margin: auto;
+		height: 300px;
+		overflow: hidden;
+		display: block;
+		background-color: #ccdfff; 
+		position: relative;
+	}
+	.sky,
+	.plot{
+		height: 45%;
+		width: 2000px;
+		background-color: #ccdfff; 
+		position: relative;
+	}
+	.road{
+		height: 10%;
+		width: 2000px;
+		background-color: grey; 
+		position: relative;
+	}
+	.road > *{
+		position: absolute;
+		bottom: 6px;
+		/*text-shadow: -2px 4px 2px gray;*/
+	}
+	.very-large{
+		font-size: 8em;
+	}
+	.size_VL{font-size: 2em;}
+	.size_L {font-size: 1.5em;  }
+	.size_M {font-size: 1em;}
+	.size_S {font-size: 0.8em;  }
+	.size_VS{font-size: 0.5em;}
+	.size_VVS{font-size: 0.3em;}
+
+	.green{color:green;}
+	.brown{color:brown;}
+	.white{color: white;}
+	.off_white{color: #f9f9f9}
+	.blue{color: blue;}
+
+	.t_shadow{text-shadow: 2px 2px 5px #AAA;}
+	#trolly{
+		position: absolute;
+		font-size: 0.6em;
+		left: 20px;
+		bottom: 5px;
+		color: #f92a6f;
+		z-index: 10;
+	}
+	.vehicle{
+		position: absolute;
+	}
+	.outOfFrame {
+		left: -200px;
+	}
+	.layer_B{  z-index: 7;}
+	.layer_M{  z-index: 8;}
+	.layer_T{  z-index: 9;}
+	</style>
+</head>
+<body>
+
+<div class="frame very-large">
+	
+	<div class="sky ">
+		<i id="jet_l" class="fa fa-fighter-jet vehicle blue size_S layer_B"></i>
+		<i id="jet_s" class="fa fa-fighter-jet vehicle blue size_VVS layer_B outOfFrame"></i>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<i class="fa fa-cloud size_VS white t_shadow"></i>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="ds_group" pull="5|1" stack="down">
+			<i class="fa fa-cloud faa-horizontal animated size_VS white t_shadow ds" a_duration="10000"></i>
+			<i class="fa fa-cloud off_white t_shadow"></i>
+		</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<i class="fa fa-cloud size_VS white layer_T"></i>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i class="fa fa-cloud white t_shadow" white></i>
+	</div>
+	<div class="plot ">
+		<i class="fa fa-fire"></i>
+		<i class="fa fa-fire-extinguisher"></i>
+
+		<i class="fa fa-leaf"></i>
+		<i class="fa fa-tree green wobble animated infinite ds" a_duration="1000" a_pause="3500"></i>
+		<i class="fa fa-blind animated hinge ds" a_delay="3000"></i>
+
+		<i class="fa fa-ambulance"></i>
+		<i class="fa fa-truck"></i>
+		
+
+
+		<i class="fa fa-building"></i>
+		<i class="fa fa-building-o"></i>
+		<i class="fa fa-hospital-o"></i>
+		<i class="fa fa-university"></i>
+
+		
+		
+	</div>
+	<div class="road">
+		<i id="trolly" class="fa fa-shopping-cart pulse animated ds" a_count="-1" a_pause="2500"></i>
+		<i class="fa fa-bicycle"></i>
+		<i class="fa fa-motorcycle"></i>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	head.ready(function(){
+		$(".ds").ds_update();
+		$(".ds_group").ds_group();
+
+
+		function ainmatePlot(){
+			$(".plot")
+			.animate({"left": "-1000px"}, 10000)
+			.animate({"left": "0px"}, 10000, 'linear', function() {
+	            setInterval(ainmatePlot,1000);
+	        });
+		}
+		ainmatePlot();
+
+		function ainmateSky(){
+			$(".sky")
+			.animate({"left": "3000px"}, 13000)
+			.animate({"left": "-100px"}, 13000, 'linear', function() {
+	            setInterval(ainmateSky,1000);
+	        });
+		}
+		ainmateSky();
+
+		$("#jet_s")
+		.animate({"left": "2000px"}, 4000)
+		//.animate({"left": "-50px"}, 100);
+
+		$("#jet_l")
+		.animate({"left": "2000px"}, 5000)
+		//.animate({"left": "-150px"}, 100);
+	});
+</script>
+</body>
+</html>
