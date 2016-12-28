@@ -1,4 +1,4 @@
-# Tag Bbased Styler
+# Tag Based Styler
 Give dynamic styling to any HTML tag without code
 
 [Demo 1](https://amitguptagwl.github.io/tag-based-styler/index.html)
